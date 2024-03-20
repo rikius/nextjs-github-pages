@@ -1,0 +1,133 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+/* Style for top menu */
+.top-menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-menu nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.top-menu nav ul li {
+    margin-right: 20px;
+}
+
+.top-menu nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style for logo and search input */
+.logo-and-search input[type='text'] {
+    width: 200px; /* Adjust as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for main content */
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+/* Style for left side navigation */
+.left-nav {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.left-nav ul {
+    list-style-type: none;
+}
+
+.left-nav ul li {
+    margin-bottom: 10px;
+}
+
+.left-nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Style for page content */
+.page-content {
+    padding: 20px;
+}
+
+/* Style for right side navigation */
+.right-nav {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.right-nav ul {
+    list-style-type: none;
+}
+
+.right-nav ul li {
+    margin-bottom: 10px;
+}
+
+.right-nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Footer style */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Media query for tablets */
+@media only screen and (min-width: 768px) {
+    .main-content {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .left-nav {
+        flex: 0 0 25%;
+    }
+
+    .page-content {
+        flex: 0 0 50%;
+    }
+
+    .right-nav {
+        flex: 0 0 25%;
+    }
+}
+
+/* Media query for desktops */
+@media only screen and (min-width: 992px) {
+    .main-content {
+        flex-wrap: nowrap;
+    }
+
+    .left-nav {
+        flex: 0 0 20%;
+    }
+
+    .page-content {
+        flex: 0 0 60%;
+    }
+
+    .right-nav {
+        flex: 0 0 20%;
+    }
+}
