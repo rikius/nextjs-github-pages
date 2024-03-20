@@ -1,0 +1,26 @@
+{
+    "trailingComma": "es5",
+    "semi": true,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "useTabs": false,
+    "jsxSingleQuote": true,
+    "printWidth": 80,
+    "proseWrap": "always",
+    "bracketSpacing": true,
+    "plugins": ["prettier-plugin-organize-imports"],
+    "overrides": [
+        {
+            "files": "*.css",
+            "options": {
+                "parser": "css"
+            }
+        },
+        {
+            "files": "*.md",
+            "options": {
+                "parser": "mdx"
+            }
+        }
+    ]
+}
