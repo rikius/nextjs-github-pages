@@ -1,27 +1,30 @@
-import './styles/styles.css'; // Import your CSS file
+import { ReactNode } from "react";
+import styles from "./Layout.module.css"; // Import your CSS file
 
-function DocumentationPage() {
+type LayoutProps = { children?: ReactNode };
+
+function Layout({ children }: LayoutProps) {
     return (
-        <div className='container'>
+        <div className={styles.container}>
             {/* Top Section with Logo and Search */}
-            <header className='top-menu'>
+            <header className={styles.topMenu}>
                 {/* Logo and Search */}
-                <div className='logo-and-search'>
+                <div className={styles.logoAndSearch}>
                     {/* Your logo and search input goes here */}
-                    <input type='text' placeholder='Search...' />
+                    <input type="text" placeholder="Search..." />
                     {/* Add your logo */}
                 </div>
                 {/* Top menu */}
                 <nav>
                     <ul>
                         <li>
-                            <a href='#'>Home</a>
+                            <a href="#">Home</a>
                         </li>
                         <li>
-                            <a href='#'>About</a>
+                            <a href="#">About</a>
                         </li>
                         <li>
-                            <a href='#'>Documentation</a>
+                            <a href="#">Documentation</a>
                         </li>
                         {/* Add more menu items as needed */}
                     </ul>
@@ -29,57 +32,44 @@ function DocumentationPage() {
             </header>
 
             {/* Main Content Section */}
-            <div className='main-content'>
+            <div className={styles.mainContent}>
                 {/* Left Side Navigation */}
-                <nav className='left-nav'>
+                <nav className={styles.leftNav}>
                     {/* Your left side navigation content goes here */}
                     <ul>
                         <li>
-                            <a href='#introduction'>Introduction</a>
+                            <a href="#introduction">Introduction</a>
                         </li>
                         <li>
-                            <a href='#getting-started'>Getting Started</a>
+                            <a href="#getting-started">Getting Started</a>
                         </li>
                         <li>
-                            <a href='#components'>Components</a>
+                            <a href="#components">Components</a>
                         </li>
                         {/* Add more navigation links as needed */}
                     </ul>
                 </nav>
 
                 {/* Page Content */}
-                <div className='page-content'>
+                <div className={styles.pageContent}>
                     {/* Content of the page goes here */}
-                    <section id='introduction'>
-                        <h2>Introduction</h2>
-                        <p>This is the introduction section.</p>
-                    </section>
-
-                    <section id='getting-started'>
-                        <h2>Getting Started</h2>
-                        <p>This is the getting started section.</p>
-                    </section>
-
-                    <section id='components'>
-                        <h2>Components</h2>
-                        <p>This is the components section.</p>
-                    </section>
+                    {children}
                     {/* Add more sections as needed */}
                 </div>
 
                 {/* Right Side Navigation (Table of Contents) */}
-                <nav className='right-nav'>
+                <nav className={styles.rightNav}>
                     {/* Your right side navigation (table of contents) content goes here */}
                     <h2>Table of Contents</h2>
                     <ul>
                         <li>
-                            <a href='#introduction'>Introduction</a>
+                            <a href="#introduction">Introduction</a>
                         </li>
                         <li>
-                            <a href='#getting-started'>Getting Started</a>
+                            <a href="#getting-started">Getting Started</a>
                         </li>
                         <li>
-                            <a href='#components'>Components</a>
+                            <a href="#components">Components</a>
                         </li>
                         {/* Add more table of contents links as needed */}
                     </ul>
@@ -87,7 +77,7 @@ function DocumentationPage() {
             </div>
 
             {/* Footer Section */}
-            <footer>
+            <footer className={styles.footer}>
                 {/* Your footer content goes here */}
                 <p>Footer content here</p>
             </footer>
@@ -95,4 +85,4 @@ function DocumentationPage() {
     );
 }
 
-export default DocumentationPage;
+export default Layout;

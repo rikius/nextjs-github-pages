@@ -1,18 +1,17 @@
 name: setup-node
-description:
-    'Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧'
+description: "Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧"
 outputs:
     manager:
-        description: 'what package namanger will be used'
+        description: "what package namanger will be used"
         value: ${{ steps.detect-package-manager.outputs.manager }}
     command:
-        description: 'default package install command'
+        description: "default package install command"
         value: ${{ steps.detect-package-manager.outputs.command }}
     runner:
-        description: 'runner of action'
+        description: "runner of action"
         value: ${{ steps.detect-package-manager.outputs.runner }}
 runs:
-    using: 'composite'
+    using: "composite"
     steps:
         - name: Detect package manager
           id: detect-package-manager
@@ -41,7 +40,7 @@ runs:
         - name: Setup Node
           uses: actions/setup-node@v4
           with:
-              node-version: '20'
+              node-version: "20"
 
         - uses: pnpm/action-setup@v3
           if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
@@ -58,8 +57,7 @@ runs:
                   .next/cache
                   node_modules
               # Generate a new cache whenever packages or source files change.
-              key:
-                  ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml',
+              key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml',
                   '**/package-lock.json', '**/yarn.lock') }}-${{
                   hashFiles('**.[jt]sx?') }}
               # If source files changed but packages didn't, rebuild from a prior cache.
@@ -69,6 +67,5 @@ runs:
         - name: Install dependencies 🔧
           if: steps.cache_dependencies.outputs.cache-hit != 'true'
           shell: bash
-          run:
-              ${{ steps.detect-package-manager.outputs.manager }} ${{
+          run: ${{ steps.detect-package-manager.outputs.manager }} ${{
               steps.detect-package-manager.outputs.command }}
