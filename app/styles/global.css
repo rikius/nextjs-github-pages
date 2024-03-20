@@ -353,6 +353,10 @@ template {
 /**
  * customization of html
  */
+/* Resetting default margin and padding */
+* {
+    box-sizing: border-box;
+}
 html,
 body {
     height: 100%;
