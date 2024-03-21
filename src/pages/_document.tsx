@@ -1,17 +1,24 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
+import { SkipNavLink } from "nextra-theme-docs";
+
 import { siteConfig } from "../siteConfig";
 
-export default function Document() {
-    return (
-        <Html
-            lang={siteConfig.languageCode}
-            dir={siteConfig.isRTL ? "rtl" : "ltr"}
-        >
-            <Head />
-            <body>
-                <Main />
-                <NextScript />
-            </body>
-        </Html>
-    );
+class MyDocument extends Document {
+    render() {
+        return (
+            <Html
+                lang={siteConfig.languageCode}
+                dir={siteConfig.isRTL ? "rtl" : "ltr"}
+            >
+                <Head />
+                <body>
+                    <SkipNavLink styled />
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        );
+    }
 }
+
+export default MyDocument;

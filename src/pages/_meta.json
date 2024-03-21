@@ -1,6 +1,7 @@
 {
     "index": "My Homepage",
     "contact": "Contact Us",
+    "advanced": "Advanced",
     "github_link": {
         "type": "page",
         "title": "Nextra",

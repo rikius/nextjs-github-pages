@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 export default {
     logo: (
         <>
@@ -10,11 +12,21 @@ export default {
             <span style={{ marginLeft: ".4em", fontWeight: 800 }}>R. K.</span>
         </>
     ),
+    docsRepositoryBase:
+        "https://github.com/rikius/nextjs-github-pages/tree/main",
     project: {
         link: "https://github.com/rikius/nextjs-github-pages/",
     },
     footer: {
         text: <span>{new Date().getFullYear()} © R. K.</span>,
+    },
+    useNextSeoProps() {
+        const { asPath } = useRouter();
+        if (asPath !== "/") {
+            return {
+                titleTemplate: "%s – SWR",
+            };
+        }
     },
     themeSwitch: {
         useOptions() {
