@@ -2,9 +2,6 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-import Layout from "components/Layout";
-import "../styles/global.css";
-
 export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
 
@@ -36,8 +33,6 @@ export default function App({ Component, pageProps }: AppProps) {
     }, [router.events]);
 
     return (
-        <Layout>
             <Component {...pageProps} />
-        </Layout>
     );
 }

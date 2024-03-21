@@ -1,0 +1,10 @@
+{
+    "index": "My Homepage",
+    "contact": "Contact Us",
+    "github_link": {
+        "type": "page",
+        "title": "Nextra",
+        "href": "https://github.com/shuding/nextra",
+        "newWindow": true
+    }
+}
