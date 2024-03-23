@@ -1,7 +1,22 @@
 {
-    "index": "My Homepage",
-    "contact": "Contact Us",
+    "*": {
+        "type": "page"
+    },
+    "index": {
+        "title": "Home",
+        "type": "page",
+        "theme": {
+            "breadcrumb": false,
+            "footer": true,
+            "sidebar": false,
+            "toc": true,
+            "pagination": false
+        }
+    },
     "advanced": "Advanced",
+    "open": "Opening Windows",
+    "focus": "Focus Window",
+    "contact": "Contact Us",
     "github_link": {
         "type": "page",
         "title": "Nextra",
