@@ -4,13 +4,12 @@
     },
     "index": {
         "title": "Home",
-        "type": "page",
         "display": "hidden",
         "theme": {
             "breadcrumb": false,
             "footer": true,
             "sidebar": false,
-            "toc": true,
+            "toc": false,
             "pagination": false
         }
     },
