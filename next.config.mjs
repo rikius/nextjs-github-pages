@@ -1,8 +1,13 @@
 import nextra from "nextra";
 import rehypePrettyCode from "rehype-pretty-code";
 import { bundledLanguages, getHighlighter } from "shiki/bundle/web";
-import { transformerNotationDiff, transformerNotationHighlight, transformerNotationWordHighlight, transformerNotationErrorLevel, transformerNotationFocus } from '@shikijs/transformers';
-
+import {
+    transformerNotationDiff,
+    transformerNotationHighlight,
+    transformerNotationWordHighlight,
+    transformerNotationErrorLevel,
+    transformerNotationFocus,
+} from "@shikijs/transformers";
 
 import fs from "node:fs";
 
@@ -16,13 +21,23 @@ import fs from "node:fs";
 //   },
 // };
 
-const light = JSON.parse(fs.readFileSync('./themes/shiki.github-light.json', 'utf8'))
-const dark = JSON.parse(fs.readFileSync('./themes/shiki.github-dark.json', 'utf8'))
+const light = JSON.parse(
+    fs.readFileSync("./themes/shiki.github-light.json", "utf8"),
+);
+const dark = JSON.parse(
+    fs.readFileSync("./themes/shiki.github-dark.json", "utf8"),
+);
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
     keepBackground: false,
-    transformers: [transformerNotationDiff(), transformerNotationHighlight(), transformerNotationWordHighlight(), transformerNotationErrorLevel(), transformerNotationFocus()],
+    transformers: [
+        transformerNotationDiff(),
+        transformerNotationHighlight(),
+        transformerNotationWordHighlight(),
+        transformerNotationErrorLevel(),
+        transformerNotationFocus(),
+    ],
     theme: {
         light: light,
         dark: dark,
@@ -61,7 +76,7 @@ const withNextra = nextra({
     codeHighlight: false,
     mdxOptions: {
         // rehypePrettyCodeOptions: options,
-        rehypePlugins: [([rehypePrettyCode, options])],
+        rehypePlugins: [[rehypePrettyCode, options]],
     },
 });
 

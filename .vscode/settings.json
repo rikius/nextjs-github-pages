@@ -1,4 +1,9 @@
 {
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": false,

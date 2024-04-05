@@ -366,24 +366,22 @@ renders multiple code blocks for every theme and tags them with an attribute
     multiple themes without rendering multiple code blocks.
 </Callout>
 
-
-
 ```ts
-console.log('No errors or warnings')
-console.error('Error') // [!code error]
-console.warn('Warning') // [!code warning]
+console.log("No errors or warnings");
+console.error("Error"); // [!code error]
+console.warn("Warning"); // [!code warning]
 ```
 
 ```ts
 // [!code highlight:3]
-console.log('No errors or warnings')
-console.error('Error') // [!code error]
-console.warn('Warning') // [!code warning]
+console.log("No errors or warnings");
+console.error("Error"); // [!code error]
+console.warn("Warning"); // [!code warning]
 ```
 
 ```ts
 // [!code focus:3]
-console.log('Focused')
-console.log('Focused')
-console.log('Not focused')
+console.log("Focused");
+console.log("Focused");
+console.log("Not focused");
 ```
