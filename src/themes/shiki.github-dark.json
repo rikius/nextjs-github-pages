@@ -211,7 +211,10 @@
             }
         },
         {
-            "scope": ["entity", "entity.name"],
+            "scope": [
+                "entity",
+                "entity.name"
+            ],
             "settings": {
                 "foreground": "#b392f0"
             }
@@ -235,7 +238,10 @@
             }
         },
         {
-            "scope": ["storage", "storage.type"],
+            "scope": [
+                "storage",
+                "storage.type"
+            ],
             "settings": {
                 "foreground": "#f97583"
             }
@@ -334,7 +340,10 @@
             }
         },
         {
-            "scope": ["source.regexp", "string.regexp"],
+            "scope": [
+                "source.regexp",
+                "string.regexp"
+            ],
             "settings": {
                 "foreground": "#dbedff"
             }
@@ -382,7 +391,10 @@
             }
         },
         {
-            "scope": ["markup.heading", "markup.heading entity.name"],
+            "scope": [
+                "markup.heading",
+                "markup.heading entity.name"
+            ],
             "settings": {
                 "fontStyle": "bold",
                 "foreground": "#79b8ff"
@@ -409,13 +421,17 @@
             }
         },
         {
-            "scope": ["markup.underline"],
+            "scope": [
+                "markup.underline"
+            ],
             "settings": {
                 "fontStyle": "underline"
             }
         },
         {
-            "scope": ["markup.strikethrough"],
+            "scope": [
+                "markup.strikethrough"
+            ],
             "settings": {
                 "fontStyle": "strikethrough"
             }
@@ -449,14 +465,20 @@
             }
         },
         {
-            "scope": ["markup.changed", "punctuation.definition.changed"],
+            "scope": [
+                "markup.changed",
+                "punctuation.definition.changed"
+            ],
             "settings": {
                 "background": "#c24e00",
                 "foreground": "#ffab70"
             }
         },
         {
-            "scope": ["markup.ignored", "markup.untracked"],
+            "scope": [
+                "markup.ignored",
+                "markup.untracked"
+            ],
             "settings": {
                 "background": "#79b8ff",
                 "foreground": "#2f363d"
@@ -508,7 +530,10 @@
             }
         },
         {
-            "scope": ["constant.other.reference.link", "string.other.link"],
+            "scope": [
+                "constant.other.reference.link",
+                "string.other.link"
+            ],
             "settings": {
                 "fontStyle": "underline",
                 "foreground": "#dbedff"

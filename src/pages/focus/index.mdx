@@ -2,7 +2,7 @@
 
 This section provides how we can focus window.
 
-import { Callout } from "nextra/components";
+import { Callout } from 'nextra/components';
 
 # Syntax Highlighting
 
@@ -12,14 +12,14 @@ Markdown file:
 
 ````md filename="Markdown"
 ```js
-console.log("hello, world");
+console.log('hello, world');
 ```
 ````
 
 Results in:
 
 ```js
-console.log("hello, world");
+console.log('hello, world');
 ```
 
 ## Features
@@ -40,7 +40,7 @@ block:
 
 ````md filename="Markdown"
 ```js {1,4-5}
-import { useState } from "react";
+import { useState } from 'react';
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -52,7 +52,7 @@ function Counter() {
 Result:
 
 ```js {1,4-5}
-import { useState } from "react";
+import { useState } from 'react';
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -67,7 +67,7 @@ code block:
 
 ````md filename="Markdown"
 ```js /useState/
-import { useState } from "react";
+import { useState } from 'react';
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -77,7 +77,7 @@ function Counter() {
 ````
 
 ```js /useState/
-import { useState } from "react";
+import { useState } from 'react';
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -95,14 +95,14 @@ the user hovers over it:
 
 ````md filename="Markdown"
 ```js copy
-console.log("hello, world");
+console.log('hello, world');
 ```
 ````
 
 Renders:
 
 ```js copy
-console.log("hello, world");
+console.log('hello, world');
 ```
 
 You can enable this feature globally by setting `defaultShowCopyCode: true` in
@@ -116,7 +116,7 @@ attribute:
 
 ````md filename="Markdown"
 ```js showLineNumbers
-import { useState } from "react";
+import { useState } from 'react';
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -128,7 +128,7 @@ function Counter() {
 Renders:
 
 ```js showLineNumbers
-import { useState } from "react";
+import { useState } from 'react';
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -143,14 +143,14 @@ attribute:
 
 ````md filename="Markdown"
 ```js filename="example.js"
-console.log("hello, world");
+console.log('hello, world');
 ```
 ````
 
 Renders:
 
 ```js filename="example.js"
-console.log("hello, world");
+console.log('hello, world');
 ```
 
 ### ANSI Highlighting
@@ -224,11 +224,11 @@ tokens and you can override any of these:
 
 ## With Dynamic Content
 
-Since syntax highlighting is done at build time, you can’t use dynamic content
-in your code blocks. However, since MDX is very powerful there is a workaround
-via client JS. For example:
+Since syntax highlighting is done at build time, you can’t use dynamic
+content in your code blocks. However, since MDX is very powerful there is a
+workaround via client JS. For example:
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 export function DynamicCode({ children }) {
     const ref = useRef();
@@ -236,15 +236,15 @@ export function DynamicCode({ children }) {
     // Find the corresponding token from the DOM
     useEffect(() => {
         if (ref.current) {
-            const token = [...ref.current.querySelectorAll("code span")].find(
-                (el) => el.innerText === "1",
+            const token = [...ref.current.querySelectorAll('code span')].find(
+                (el) => el.innerText === '1'
             );
             tokenRef.current = token;
         }
     }, []);
     return (
         <>
-            <div ref={ref} style={{ marginTop: "1.5rem" }}>
+            <div ref={ref} style={{ marginTop: '1.5rem' }}>
                 {children}
             </div>
             <a
@@ -253,20 +253,20 @@ export function DynamicCode({ children }) {
                         (parseInt(tokenRef.current.innerText) || 0) + 1;
                 }}
                 style={{
-                    cursor: "pointer",
-                    userSelect: "none",
+                    cursor: 'pointer',
+                    userSelect: 'none',
                 }}
             >
                 Increase the number
             </a>
             <a
                 onClick={() => {
-                    tokenRef.current.innerText = "1 + 1";
+                    tokenRef.current.innerText = '1 + 1';
                 }}
                 style={{
-                    marginLeft: ".5rem",
-                    cursor: "pointer",
-                    userSelect: "none",
+                    marginLeft: '.5rem',
+                    cursor: 'pointer',
+                    userSelect: 'none',
                 }}
             >
                 Change to `1 + 1`
@@ -309,7 +309,7 @@ You can provide these grammars by overriding the `getHighlighter` function in
 `next.config.js`:
 
 ```js filename="next.config.js" {13-18}
-import { BUNDLED_LANGUAGES } from "shiki";
+import { BUNDLED_LANGUAGES } from 'shiki';
 
 nextra({
     // ... other options
@@ -322,10 +322,10 @@ nextra({
                         ...BUNDLED_LANGUAGES,
                         // custom grammar options, see the Shiki documentation for how to provide these options
                         {
-                            id: "my-lang",
-                            scopeName: "source.my-lang",
-                            aliases: ["mylang"], // Along with id, aliases will be included in the allowed names you can use when writing markdown.
-                            path: "../../public/syntax/grammar.tmLanguage.json",
+                            id: 'my-lang',
+                            scopeName: 'source.my-lang',
+                            aliases: ['mylang'], // Along with id, aliases will be included in the allowed names you can use when writing markdown.
+                            path: '../../public/syntax/grammar.tmLanguage.json',
                         },
                     ],
                 }),
@@ -346,7 +346,7 @@ nextra({
         rehypePrettyCodeOptions: {
             // VSCode theme or built-in Shiki theme, see Shiki documentation for more information
             theme: JSON.parse(
-                readFileSync("./public/syntax/arctis_light.json", "utf8"),
+                readFileSync('./public/syntax/arctis_light.json', 'utf8')
             ),
         },
     },
@@ -359,7 +359,7 @@ Nextra currently doesn't support specifying multiple themes. Because Shiki
 renders multiple code blocks for every theme and tags them with an attribute
 `data-theme`, e.g. `data-theme="dark"`.
 
-<Callout type="info">
+<Callout type='info'>
     However, in the future, multiple themes will be supported. You can track the
     progress in shikiji (newly fork of Shiki)
     https://github.com/antfu/shikiji#multiple-themes that already supports
@@ -367,21 +367,21 @@ renders multiple code blocks for every theme and tags them with an attribute
 </Callout>
 
 ```ts
-console.log("No errors or warnings");
-console.error("Error"); // [!code error]
-console.warn("Warning"); // [!code warning]
+console.log('No errors or warnings');
+console.error('Error'); // [!code error]
+console.warn('Warning'); // [!code warning]
 ```
 
 ```ts
 // [!code highlight:3]
-console.log("No errors or warnings");
-console.error("Error"); // [!code error]
-console.warn("Warning"); // [!code warning]
+console.log('No errors or warnings');
+console.error('Error'); // [!code error]
+console.warn('Warning'); // [!code warning]
 ```
 
 ```ts
 // [!code focus:3]
-console.log("Focused");
-console.log("Focused");
-console.log("Not focused");
+console.log('Focused');
+console.log('Focused');
+console.log('Not focused');
 ```

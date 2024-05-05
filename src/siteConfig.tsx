@@ -1,7 +1,7 @@
 export const siteConfig = {
     // --------------------------------------
     // Translations should replace these lines:
-    languageCode: "en",
+    languageCode: 'en',
     hasLegacySite: true,
     isRTL: false,
     // --------------------------------------

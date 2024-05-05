@@ -1,4 +1,5 @@
 {
+    "workbench.iconTheme": "material-icon-theme",
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "files.trimTrailingWhitespace": true,
@@ -9,7 +10,7 @@
     "editor.formatOnPaste": false,
     "prettier.useEditorConfig": false,
     "prettier.useTabs": false,
-    "prettier.configPath": ".prettierrc.json",
+    "prettier.configPath": "prettier.config.mjs",
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit",
         "source.fixAll.eslint": "never"

@@ -20,14 +20,14 @@
     --vp-c-bg-soft: rgba(255, 255, 255, 0);
 }
 
-code[data-theme*=" "],
-code[data-theme*=" "] span {
+code[data-theme*=' '],
+code[data-theme*=' '] span {
     color: var(--shiki-light);
     /* background-color: var(--shiki-light-bg); */
 }
 
-html.dark code[data-theme*=" "],
-html.dark code[data-theme*=" "] span {
+html.dark code[data-theme*=' '],
+html.dark code[data-theme*=' '] span {
     color: var(--shiki-dark);
     /* background-color: var(--shiki-dark-bg); */
     /*Optional, if you also want font styles*/
@@ -77,27 +77,27 @@ pre [data-line] {
     color: inherit !important;
 }
 
-[data-chars-id="v"] {
+[data-chars-id='v'] {
     border-bottom-color: rgb(219 39 119 / var(--tw-border-opacity));
     background-color: #9f123980;
     color: rgb(249 168 212 / var(--tw-text-opacity)) !important;
 }
 
-[data-chars-id="s"],
-[data-chars-id="v"] {
+[data-chars-id='s'],
+[data-chars-id='v'] {
     --tw-border-opacity: 1;
     font-weight: 700;
     --tw-text-opacity: 1 !important
 ;
 }
 
-[data-chars-id="s"] {
+[data-chars-id='s'] {
     border-bottom-color: rgb(202 138 4 / var(--tw-border-opacity));
     background-color: #854d0e80;
     color: rgb(253 224 71 / var(--tw-text-opacity)) !important;
 }
 
-[data-chars-id="i"] {
+[data-chars-id='i'] {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(147 51 234 / var(--tw-border-opacity));
     background-color: #6b21a880;

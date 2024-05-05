@@ -29,7 +29,7 @@
 }
 
 /* Style for logo and search input */
-.logoAndSearch input[type="text"] {
+.logoAndSearch input[type='text'] {
     width: 200px; /* Adjust as needed */
     padding: 5px;
     border: 1px solid #ccc;
